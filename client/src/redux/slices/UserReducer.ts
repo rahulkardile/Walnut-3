@@ -1,5 +1,5 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-import { UserData } from "../../typeScript/UserTypes";
+import { UserData } from "../../typescript/res"
 
 type UserState = {
   user: UserData | null;

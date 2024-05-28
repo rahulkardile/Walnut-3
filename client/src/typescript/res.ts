@@ -3,6 +3,15 @@ export interface Response {
     message: string;
 }
 
+export interface UserData {
+  name: string;
+  email: string;
+  gender: string;
+  role: string;
+  _id: string;
+  ProfileIMG: string;
+}
+
 export type BlogType = {
     _id: string;
     title: string;
