@@ -117,7 +117,7 @@ const SideNav = ({
         </button>
       </div>
       <div
-        className={`fixed top-0 left-0 bottom-0 z-[60]  bg-white border-e w-screen border-gray-200 pt-7 pb-10 overflow-y-hidden transform transition-transform duration-300 ${
+        className={`fixed top-0 left-0 bottom-0 z-[60]  bg-white border-e w-64 portrait:w-screen border-gray-200 pt-7 pb-10 overflow-y-hidden transform transition-transform duration-300 ${
           isNavOpen ? "translate-x-0" : "-translate-x-full"
         } lg:translate-x-0`}
       >
