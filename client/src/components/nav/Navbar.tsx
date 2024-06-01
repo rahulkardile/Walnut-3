@@ -41,12 +41,14 @@ const Navbar = () => {
   ];
   return (
     <header className="text-gray-600 body-font">
-      <div className="container mx-auto flex flex-wrap  flex-col md:flex-row items-center">
+      <div className="container mx-auto flex flex-wrap flex-col md:flex-row items-center">
         <a className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
-          <img
+          {/* <img
             src={logoImg}
-            className="w-40 h-40 text-white p-2 rounded-full"
-          />
+            className="w-40 h-40 text-white bgre p-2 rounded-full"
+          /> */}
+
+          {/* <div id="bgBannerImg" className="" ></div> */}
         </a>
         <nav className="md:ml-auto md:mr-auto flex flex-wrap items-center  text-base justify-center">
           {/* <ul> */}
