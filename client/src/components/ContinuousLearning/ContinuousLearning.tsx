@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import BannerHome from "../BannerHome/BannerHome";
 interface DataInter {
   _id: string;
   title: string;
@@ -35,6 +36,10 @@ const ContinuousLearning = () => {
   };
 
   return (
+    <>
+    <div className="w-screen portrait:h-24 h-48 relative overflow-hidden">
+      <BannerHome />
+    </div>
     <section className="text-gray-600 body-font">
       <div className="container px-5 py-24 mx-auto">
         <div className="flex flex-wrap -m-4">
@@ -113,6 +118,7 @@ const ContinuousLearning = () => {
         </div>
       </div>
     </section>
+    </>
   );
 };
 

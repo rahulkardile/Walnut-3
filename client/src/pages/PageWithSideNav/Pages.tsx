@@ -20,13 +20,9 @@ import b2bImg from "../../assets/b2b.jpg";
 import retainerImg from "../../assets/Retainership.jpg";
 import SingleBlog from "../../components/blog/SingleBlog";
 
-// import businessImg from "../../../assets/Business.jpg";
-// import coachingImg from "../../assets/Business.jpg";
-// import financialImg from "../../assets/Financial.jpg";
-// import marketingImg from "../../../assets/marketingSales.jpg";
-// import corporateImg from "../../../assets/Business.jpg";
-// import b2bImg from "../../../assets/b2b.jpg";
-// import retainerImg from "../../assets/Business.jpg";
+const img1 = "https://img.freepik.com/free-vector/stylish-elegant-wave-banner-design_1055-8589.jpg?size=626&ext=jpg&ga=GA1.1.83446987.1684855417&semt=ais_user"
+const img2 = "https://img.freepik.com/free-photo/close-up-portrait-young-beautiful-attractive-redhair-girl-happy-smiling-digital-table-with-wining_1258-117940.jpg?size=626&ext=jpg&ga=GA1.1.83446987.1684855417&semt=ais_user"
+const img3 = "https://img.freepik.com/free-vector/abstract-blue-color-modern-geometric-banner-design_1055-18011.jpg?size=626&ext=jpg&ga=GA1.1.83446987.1684855417&semt=ais_user"
 
 interface Service {
   route: string;
@@ -35,6 +31,7 @@ interface Service {
   para2: JSX.Element;
   para3: JSX.Element;
   para4: JSX.Element;
+  Banner: string;
   img: string;
 }
 const Pages = () => {
@@ -45,6 +42,7 @@ const Pages = () => {
     {
       route: "/consulting",
       heading: "Business strategy Consultation",
+      Banner: img1,
       para1: (
         <>
           A robust business strategy is the cornerstone of sustainable growth.
@@ -91,6 +89,7 @@ const Pages = () => {
     {
       route: "/coaching",
       heading: "Coaching & Mentoring for Startups & SMEs",
+      Banner: img2,
       para1: (
         <>
           In the ever changing dynamic business environment, WBC offers
@@ -135,6 +134,7 @@ const Pages = () => {
     {
       route: "/financial",
       heading: "Financial Management Consultancy",
+      Banner: img3,
       para1: (
         <>
           We have one-stop solution for all your financial needs, offering asset
@@ -162,6 +162,7 @@ const Pages = () => {
     {
       route: "/marketing",
       heading: "Marketing & Sales Consultation",
+      Banner: img1,
       para1: (
         <>
           The GTM strategy specifies marketing tactics and channels for each
@@ -191,6 +192,7 @@ const Pages = () => {
     {
       route: "/corporate",
       heading: "Corporate Training & Skill Enhancement",
+      Banner: img2,
       para1: (
         <>
           Our training wing takes care of designing, delivering, and managing
@@ -213,6 +215,7 @@ const Pages = () => {
     {
       route: "/b2b",
       heading: "B2B & B2G Sales Strategy",
+      Banner: img3,
       para1: (
         <>
           B2G sales strategy focuses on cultivating relationships and providing
@@ -252,6 +255,7 @@ const Pages = () => {
     {
       route: "/retainership",
       heading: "Retainership Commitment",
+      Banner: img1,
       para1: (
         <>
           We provide retainer services tailored for small and medium-sized
@@ -285,15 +289,15 @@ const Pages = () => {
 
   return (
     <>
-      <div className="lg:block hidden">
+      {/* <div className="lg:block hidden">
         <BannerHome />
-      </div>
+      </div> */}
       <SideNav isNavOpen={isNavOpen} toggleNav={toggleNav} />
 
       <div
         className={`transition-all duration-300 ${
           isNavOpen ? "ml-64" : "ml-0"
-        } lg:ml-[17rem] overflow-hidden`}
+        } lg:ml-[16rem] overflow-hidden`}
       >
         <Routes>
           <Route path="*" element={<About />} />
@@ -311,6 +315,7 @@ const Pages = () => {
                 <SingleService
                   para1={item.para1}
                   para2={item.para2}
+                  Banner={item.Banner}
                   para3={item.para3}
                   para4={item.para4}
                   heading={item.heading}

@@ -8,6 +8,8 @@ import { GrConnect } from "react-icons/gr";
 import { useState } from "react";
 import { IoMdMenu } from "react-icons/io";
 import { RxCross2 } from "react-icons/rx";
+import b1 from "../../assets/Banners/1.jpg";
+import b2 from "../../assets/Banners/2.jpg";
 import { FaInstagram, FaEnvelope, FaLinkedin } from "react-icons/fa";
 
 const SideNav = ({
@@ -24,7 +26,7 @@ const SideNav = ({
       title: "Home",
       route: "/",
       icon: <BiHomeSmile />,
-      // bgcolor: "bg-[#b3cde0]",
+      Banner: b1,
       submenu: [],
     },
     {
@@ -32,17 +34,14 @@ const SideNav = ({
       title: "About Us",
       route: "/aboutus",
       icon: <BsPeopleFill />,
-
-      // bgcolor: "bg-[#92d2f9]",
+      Banner: b2,
       submenu: [],
     },
     {
       id: 3,
       title: "Services ",
       route: "/aboutus/services",
-
       icon: <FaServicestack />,
-
       // bgcolor: "bg-[#6497b1]",
       submenu: [
         {
@@ -105,10 +104,14 @@ const SideNav = ({
   ];
 
   return (
-    <div>
-      <div className="lg:hidden flex justify-between items-center bg-white p-4 text-white">
+    <div className="absolute z-50">
+      <div className="lg:hidden flex justify-between portrait:w-screen  items-center p-4 text-white">
         <a className="flex title-font font-medium items-center text-white">
-          <img src={logoImg} className="w-20 h-20" alt="logo" />
+          <img
+            src={logoImg}
+            className="w-20 portrait:w-14 portrait:h-14 h-20"
+            alt="logo"
+          />
         </a>
         <button onClick={toggleNav}>
           <BiMenu className="text-3xl" />
@@ -129,7 +132,7 @@ const SideNav = ({
           </button>
         </div>
 
-        <nav className="hs-accordion-group mt-3 h-full w-full bg-gradient-to-t from-[#152c96] to-white flex flex-col ">
+        <nav className="hs-accordion-group mt-3 h-full w-full bg-gradient-to-t from-[#152c96] to-white flex flex-col  ">
           <ul className="">
             {navlinks.map((data) => (
               <li
@@ -137,6 +140,7 @@ const SideNav = ({
                 className="relative group"
                 onMouseEnter={() => setActiveSubmenu(data.id)}
                 onMouseLeave={() => setActiveSubmenu(null)}
+                onClick={data.submenu.length == 0 ? toggleNav : "" }
               >
                 <Link
                   className={`flex items-center gap-x-2.5 py-4 px-2.5 text-bold text-xl text-gray-800 font-semibold transition-all duration-300`}
@@ -146,7 +150,7 @@ const SideNav = ({
                   {data.title}
                 </Link>
                 {data.submenu.length > 0 && activeSubmenu === data.id && (
-                  <ul className="absolute left-[100%]  z-10 -top-11 w-48 bg-[#cbd0e8] shadow-lg">
+                  <ul className="absolute landscape:left-[100%] portrait:top-14  z-10 -top-11 portrait:w-72 landscape:w-48 portrait:bg-white bg-[#cbd0e8] shadow-lg">
                     {data.submenu.map((submenu) => (
                       <li key={submenu.id}>
                         <Link
