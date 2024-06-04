@@ -41,23 +41,22 @@ const Navbar = () => {
   ];
   return (
     <header className="text-gray-600 body-font">
-      <div className="container mx-auto flex flex-wrap flex-col md:flex-row items-center">
+      <div className="container mx-auto flex flex-wrap flex-row md:flex-row items-center">
         <a className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
-          {/* <img
+          <img
             src={logoImg}
-            className="w-40 h-40 text-white bgre p-2 rounded-full"
-          /> */}
+            className="w-40 h-40 portrait:w-20 portrait:h-20 text-white bgre p-2 rounded-full"
+          />
 
-          {/* <div id="bgBannerImg" className="" ></div> */}
         </a>
-        <nav className="md:ml-auto md:mr-auto flex flex-wrap items-center  text-base justify-center">
+        <nav className="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
           {/* <ul> */}
           {navlinks.map((data) => {
             return (
               <Link
                 key={data.id}
                 to={data.route}
-                className={`border ${data.bgcolor} border-gray-300 text-gray-200 px-8 py-4 text-2xl transition-colors duration-300`}
+                className={`border ${data.bgcolor} border-gray-300 text-gray-200 portrait:px-4 portrait:py-2 px-8 py-4 text-2xl portrait:text-xs transition-colors duration-300`}
               >
                 {data.title}
               </Link>

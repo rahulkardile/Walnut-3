@@ -9,7 +9,7 @@ import LetsConnect from "../../components/LetsConnect/LetsConnect";
 import SingleService from "../../components/Services/SingleService";
 import { useState } from "react";
 
-
+import logo from "../../assets/react.svg"
 
 import businessImg from "../../assets/Business.jpg";
 import coachingImg from "../../assets/Coatching.jpg";
@@ -27,6 +27,7 @@ const img3 = "https://img.freepik.com/free-vector/abstract-blue-color-modern-geo
 interface Service {
   route: string;
   heading: string;
+  logo: string;
   para1: JSX.Element;
   para2: JSX.Element;
   para3: JSX.Element;
@@ -34,6 +35,15 @@ interface Service {
   Banner: string;
   img: string;
 }
+
+import logoImage1 from "../../assets/services/B2B & B2G Sales Strategy.png"
+import logoImage2 from "../../assets/services/Coaching and mentoring.png"
+import logoImage3 from "../../assets/services/financial Management consultancy.png"
+import logoImage4 from "../../assets/services/Marketing & Sales Consultation.png"
+import logoImage5 from "../../assets/services/Corporate training & Skill enhancement.png"
+import logoImage6 from "../../assets/services/business Strategy consultation.png"
+import logoImage7 from "../../assets/services/Retainership Commitment.png"
+
 const Pages = () => {
   
 
@@ -43,6 +53,7 @@ const Pages = () => {
       route: "/consulting",
       heading: "Business strategy Consultation",
       Banner: img1,
+      logo: logoImage1,
       para1: (
         <>
           A robust business strategy is the cornerstone of sustainable growth.
@@ -90,6 +101,7 @@ const Pages = () => {
       route: "/coaching",
       heading: "Coaching & Mentoring for Startups & SMEs",
       Banner: img2,
+      logo: logoImage2,
       para1: (
         <>
           In the ever changing dynamic business environment, WBC offers
@@ -135,6 +147,7 @@ const Pages = () => {
       route: "/financial",
       heading: "Financial Management Consultancy",
       Banner: img3,
+      logo: logoImage3,
       para1: (
         <>
           We have one-stop solution for all your financial needs, offering asset
@@ -163,6 +176,7 @@ const Pages = () => {
       route: "/marketing",
       heading: "Marketing & Sales Consultation",
       Banner: img1,
+      logo: logoImage4,
       para1: (
         <>
           The GTM strategy specifies marketing tactics and channels for each
@@ -193,6 +207,7 @@ const Pages = () => {
       route: "/corporate",
       heading: "Corporate Training & Skill Enhancement",
       Banner: img2,
+      logo: logoImage5,
       para1: (
         <>
           Our training wing takes care of designing, delivering, and managing
@@ -216,6 +231,7 @@ const Pages = () => {
       route: "/b2b",
       heading: "B2B & B2G Sales Strategy",
       Banner: img3,
+      logo: logoImage6,
       para1: (
         <>
           B2G sales strategy focuses on cultivating relationships and providing
@@ -256,6 +272,7 @@ const Pages = () => {
       route: "/retainership",
       heading: "Retainership Commitment",
       Banner: img1,
+      logo: logoImage7,
       para1: (
         <>
           We provide retainer services tailored for small and medium-sized
@@ -314,6 +331,7 @@ const Pages = () => {
               element={
                 <SingleService
                   para1={item.para1}
+                  navSide={item.logo}
                   para2={item.para2}
                   Banner={item.Banner}
                   para3={item.para3}

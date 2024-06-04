@@ -3,12 +3,13 @@
 @tailwind utilities;
 
 #bgBannerImg {
-  background-image: linear-gradient(45deg,
+  background-image: linear-gradient(
+      45deg,
       rgba(255, 255, 255, 0.896),
       rgba(255, 140, 0, 0.75)
     ),
     url("./assets/bannerImg.jpg");
-    width: 100%;
-    height: 250px;
-    text-align: center;
+  width: 100%;
+  height: 250px;
+  text-align: center;
 }
